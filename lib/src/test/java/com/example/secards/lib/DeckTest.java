@@ -46,5 +46,17 @@ public class DeckTest {
 
     @Test
     public void shuffle() {
+        var deck = new Deck(List.of(
+                new Flashcard("A", "1"),
+                new Flashcard("B", "2"),
+                new Flashcard("C", "3")
+        ));
+
+        deck.shuffle(); // Shuffle the deck
+
+        // Verify that the top card is one of the original cards
+        List<String> originalFronts = List.of("A", "B", "C");
+        assertTrue(originalFronts.contains(deck.top().front()));
     }
+
 }
